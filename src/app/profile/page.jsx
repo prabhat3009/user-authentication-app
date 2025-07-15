@@ -8,7 +8,7 @@ const Profile = () => {
 
     const onLogout = async (e) => {
         e.preventDefault();
-        const response = await axios.get("/api/users/logout");
+        const response = await axios.get("/api/users/logout", { withCredentials: true });
         if (response.status === 200) {
             router.push("/login");
         }
